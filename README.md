@@ -1,4 +1,4 @@
-# Description
+# MMap tuning on tmpfs
 Benchmark for different mmap prefault/prefetch methods, which writes a 256MB mmaped buffer on tmpfs, with 128B blocks.
 
 # Run
@@ -42,6 +42,7 @@ Linux hftdev 4.4.0-87-generic #110-Ubuntu SMP Tue Jul 18 12:55:35 UTC 2017 x86_6
 Unit: millisecond
 
 same_node: backed tmpfs on the same processor node as running process
+
 diff_node: backed tmpfs on the different processor node with running process
 ```
 +-------------------------------+-----------+-----------+
@@ -61,8 +62,8 @@ diff_node: backed tmpfs on the different processor node with running process
 +-------------------------------+-----------+-----------+
 ```
 Terms in benchmark names:
-ManualPrefault: touch every byte with loop
-Prefault: set mmap MAP_POPULATE flag on
-Prealloc: call fallocate to actually allocate file space in advance
-Need: call madvise to use MADV_WILLNEED strategy to prefetch
-Seq: call madvise to use MADV_SEQUENTIAL strategy to prefetch
+- ManualPrefault: touch every byte with loop
+- Prefault: set mmap MAP_POPULATE flag on
+- Prealloc: call fallocate to actually allocate file space in advance
+- Need: call madvise to use MADV_WILLNEED strategy to prefetch
+- Seq: call madvise to use MADV_SEQUENTIAL strategy to prefetch
