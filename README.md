@@ -1,5 +1,5 @@
 # MMap tuning on tmpfs
-Benchmark for different mmap prefault/prefetch methods, which writes a 256MB mmaped buffer on tmpfs, with 128B blocks.
+Benchmark for different mmap prefault/prefetch methods, which writes a 256MB mmaped buffer on tmpfs, with 128B blocks. Explaination could be found on my Chinese [blog post](http://xoyo.space/2017/11/mmap-performance-analyzing-and-tuning/).
 
 # Run
 ```
